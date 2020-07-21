@@ -49,7 +49,14 @@ function draw() {
 
 function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-	packageSprite.x = packageBody.position.x;
-	packageSprite.y = packageBody.position.y ;
+	var options = {
+		isStatic: true,
+		packageSprite.restitution = 1.0
+        }
+    packageSprite=createSprite(width/2, 80, 10,10,options);
+    packageSprite.addImage(packageIMG)
+    packageSprite.scale=0.2
+    packageSprite.velocityY=10;
+    
   }
 }
